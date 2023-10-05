@@ -8,13 +8,12 @@ struct strings {
 	std::string gits = "gits";
 	std::string git1 = "Github";
 	std::string git2 = "Gitlab";
-	std::string about = "Welcome program version 3.0\n \
-Welcome to LainOS!, you finally can use your own navi!\n \
-we want to provide a very good opasdasdasdadasdafasdasderation system,\n \
-that you can feel you use a real NAVI or you are in SEL.\n\n \
-that you can feel you use a real NAVI or yoasdasdu are in SELasdasd.\n \
-that you can feel you use a real NAVI or you are in SEL.\n \
-that you can feel you uadsasdase a real NAVI or you are in SEL.";
+	std::string config_title = "Welcome To Config Section!\n \
+In this option, you can set your username and password for your lainOS.\n \
+but, notice that your default username and password is *lainos*. \n \
+if you wanna change that, you can fill these inputs and click config. \n";
+	std::string about = "LainOS Layer 1 - arch linux version\n \
+If you wanna support us, please visit our website, or choose one of these buttons";
 };
 
 // Init config

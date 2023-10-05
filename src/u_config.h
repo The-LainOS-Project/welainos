@@ -1,23 +1,19 @@
-#ifndef ABOUT_H
-#define ABOUT_H
-
-
 #include <gtkmm/box.h>
 #include <gtkmm/button.h>
 #include <gtkmm/window.h>
 #include <gtkmm.h>
-#include "r_image.h"
+#include "ut.h"
 
-
-class AboutWindow : public Gtk::Window {
+class ConfigWindow : public Gtk::Window {
 	public :
-		AboutWindow();
-		~AboutWindow();
+		ConfigWindow();
+		~ConfigWindow();
 
 	protected :
 		Gtk::Label infor;
 		Gtk::Box binfor;
-		RenImage Myimage;
+		Gtk::Entry username;
+		Gtk::Entry password;
+		Gtk::Button prc;
 };
 
-#endif

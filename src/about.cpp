@@ -6,7 +6,8 @@ strings str2;
 
 AboutWindow::AboutWindow()
 : binfor(Gtk::Orientation::VERTICAL),
-  infor("")
+  infor(""),
+  Myimage("/usr/share/icons/a.svg", 50, 50)
 {
 	set_default_size(600, 400);
 	set_title("About page");
