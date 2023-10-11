@@ -12,14 +12,6 @@ make
 sudo make install
 ```
 
-Auto compile & install, you can use ./auto script for compiling and installing
-
-this script will manage everything about installation process
-
-```text
-chmod +x auto ( if needed )
-./auto
-```
 
 ## Dependencies
 
@@ -33,8 +25,4 @@ chmod +x auto ( if needed )
 6. gtkmm-4.0
 
 
-## Updates
-
-This is not a main style!
-
-We will change the style in **new version** (Layer)
+## Copyright (C) 2023 LainOS
