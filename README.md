@@ -3,7 +3,7 @@
 
 ## Install
 
-### Linux
+### Make Tool
 
 Compile & install manual 
 
@@ -24,5 +24,6 @@ sudo make install
 5. pangomm-2.48
 6. gtkmm-4.0
 
+<br>
 
-## Copyright (C) 2023 LainOS
+#### Copyright (C) 2023 LainOS
