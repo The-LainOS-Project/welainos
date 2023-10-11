@@ -29,13 +29,13 @@ MyWindow::MyWindow()
 : m_button1(str.btn1),
   m_button2(str.btn2),
   m_button3(str.au),
-  m_button4(str.gits),
-  m_button5(str.git1),
-  m_button6(str.git2),
-  m_button7(str.git1), 
-  m_button8(str.git1),
-  m_button9(str.git1), 
-  m_button10(str.git1),
+  m_button4(str.github),
+  m_button5("test"),
+  m_button6("test"),
+  m_button7("test"), 
+  m_button8("test"),
+  m_button9("test"), 
+  m_button10("test"),
   m_area("/usr/share/icons/a.svg", 60, 60),
   s_area("/usr/share/icons/b.png", 30, 30),
   c_area("/usr/share/icons/c.png", 30, 30),
@@ -98,6 +98,11 @@ MyWindow::MyWindow()
 	org.attach(m_button8, btn_h*2, 	btn_w*8, 		btn_h, btn_w);
 	org.attach(m_button9, btn_h*4, 	btn_w*8, 		btn_h, btn_w);
 
+	m_button1.signal_clicked().connect(sigc::ptr_fun(&Tools::OpenWindow<AboutWindow>));
+	m_button2.signal_clicked().connect(sigc::bind(sigc::ptr_fun(&Tools::OpenLink),	std::string("https://lainos.org")));
+	m_button3.signal_clicked().connect(sigc::bind(sigc::ptr_fun(&Tools::OpenLink),	std::string("https://lainos.org")));
+	m_button4.signal_clicked().connect(sigc::bind(sigc::ptr_fun(Tools::OpenLink), 	std::string("https://github.com/The-LainOS-Project")));
+	m_button5.signal_clicked().connect(sigc::ptr_fun(&Tools::OpenWindow<ConfigWindow>));
 
 	org.set_margin(10);
 
@@ -219,7 +224,7 @@ MyWindow::MyWindow()
 
 	Tools::SetStyle(m_button1, "{border:0;background:whitesmoke;}", "btn1");
 	Tools::SetStyle(m_button1, "{color:gray;}", "btn1", AC);
-	Tools::SetStyle(m_button1, "{background:white;}", "btn1", HOV);
+	Tools::SetStyle(m_button1, "{background:white;box-shadow: 1px 1px 5px gray;}", "btn1", HOV);
 	Tools::SetStyle(m_button2, "{border:0;background:whitesmoke;}", "btn2");
 	Tools::SetStyle(m_button2, "{color:gray;}", "btn2", AC);
 	Tools::SetStyle(m_button2, "{background:white;}", "btn2", HOV);

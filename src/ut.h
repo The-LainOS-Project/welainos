@@ -69,6 +69,10 @@ public:
     // do the upgrade code here ...
     system("xfce4-terminal -e 'bash -c \"sudo pacman -Syu && read\"' &");
   }
+  static void OpenLink(std::string link) {
+    std::string cmd = "firefox " + link + " &";
+    system(cmd.c_str());
+  }
   static Gtk::Box *CreateImageButton(std::string image_path, std::string _label, std::string style) {
     auto pmap = Gtk::make_managed<Gtk::Image>(image_path);
     // auto label = Gtk::make_managed<Gtk::Label>(_label);
