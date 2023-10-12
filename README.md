@@ -10,6 +10,7 @@ Compile & install manual
 ```text
 make
 sudo make install
+make clean # Optional
 ```
 
 
@@ -24,6 +25,12 @@ sudo make install
 5. pangomm-2.48
 6. gtkmm-4.0
 
+## References
+Gtkmm Book
+- https://developer-old.gnome.org/gtkmm/stable/
+
+
 <br>
+
 
 #### Copyright (C) 2023 LainOS
