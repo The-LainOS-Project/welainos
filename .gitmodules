@@ -1,0 +1,3 @@
+[submodule "doc/gnom-gtkmm-documentation"]
+	path = doc/gnom-gtkmm-documentation
+	url = https://github.com/GNOME/gtkmm-documentation
