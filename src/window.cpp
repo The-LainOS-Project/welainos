@@ -54,8 +54,11 @@ MyWindow::MyWindow()
   l1("Gits"),
   l2("Settings"),
   l3("informations"),
+  startup("Next Boot"),
+  lainos_label("LainOS"),
   buttons1(Gtk::Orientation::HORIZONTAL),
   buttons2(Gtk::Orientation::HORIZONTAL),
+  bottom_box(Gtk::Orientation::HORIZONTAL),
   buttons3(Gtk::Orientation::HORIZONTAL),
   button_frame(Gtk::Orientation::HORIZONTAL),
   button_frame2(Gtk::Orientation::HORIZONTAL)
@@ -74,8 +77,7 @@ MyWindow::MyWindow()
 	buttons1.set_valign(Gtk::Align::CENTER);
 	buttons1.set_halign(Gtk::Align::CENTER);
 
-	buttons2.set_valign(Gtk::Align::CENTER);
-	buttons2.set_halign(Gtk::Align::CENTER);
+
 	org.set_row_homogeneous(true);
 	org.set_column_homogeneous(true);
 	org.set_column_spacing(20);
@@ -108,38 +110,44 @@ MyWindow::MyWindow()
 
 	buttons1.append(org);
 
-    auto hboxr = Gtk::make_managed<Gtk::Box>(Gtk::Orientation::HORIZONTAL, 5);
-    hboxr->set_valign(Gtk::Align::CENTER);
-    hboxr->set_halign(Gtk::Align::CENTER);
-    hboxr->append(s_area);
-    reddit.set_child(*hboxr);
+	ImageButton *mybtn = Tools::CreateImageButton("/usr/share/icons/b.png", "{}");
+    reddit.set_child(*mybtn);
 
-    auto hboxr2 = Gtk::make_managed<Gtk::Box>(Gtk::Orientation::HORIZONTAL, 5);
-    hboxr2->set_valign(Gtk::Align::CENTER);
-    hboxr2->set_halign(Gtk::Align::CENTER);
-    hboxr2->append(c_area);
-    youtube.set_child(*hboxr2);
+	ImageButton *mybtn2 = Tools::CreateImageButton("/usr/share/icons/c.png", "{}");
+    youtube.set_child(*mybtn2);
 
-    auto hboxr3 = Gtk::make_managed<Gtk::Box>(Gtk::Orientation::HORIZONTAL, 5);
-    hboxr3->set_valign(Gtk::Align::CENTER);
-    hboxr3->set_halign(Gtk::Align::CENTER);
-    hboxr3->append(d_area);
-    blog.set_child(*hboxr3);
+	ImageButton *mybtn3 = Tools::CreateImageButton("/usr/share/icons/d.png", "{}");
+    blog.set_child(*mybtn3);
 
     reddit.signal_clicked().connect(
     	[this](){
     		system("chromium https://reddit.com/r/lainosdevelopers &");
     	}
     );
-
+	buttons2.set_valign(Gtk::Align::CENTER);
+	buttons2.set_halign(Gtk::Align::CENTER);
 	buttons2.append(reddit);
 	buttons2.append(youtube);
 	buttons2.append(blog);
 
-	buttons2.set_margin(10);
+
+
+	bottom_btns.set_row_homogeneous(true);
+	bottom_btns.set_column_homogeneous(true);
+	bottom_btns.set_column_spacing(20);
+	bottom_btns.set_row_spacing(20);
+	lainos_label.set_valign(Gtk::Align::CENTER);
+	lainos_label.set_halign(Gtk::Align::START);
+	lainos_label.set_margin_start(10);
+	startup.set_valign(Gtk::Align::CENTER);
+	startup.set_halign(Gtk::Align::END);
+
+	bottom_btns.attach(lainos_label, 0, 1, 2, 2);
+	bottom_btns.attach(buttons2, 2, 1, 2, 2);
+	bottom_btns.attach(startup, 4, 1, 2, 2);
 
 	m_box1.append(buttons1);
-	m_box1.append(buttons2);
+	m_box1.append(bottom_btns);
 
 //   m_box1.set_margin(20);
 // 	m_box1.append(body);

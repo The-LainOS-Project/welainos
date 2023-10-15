@@ -16,10 +16,14 @@ class MyWindow : public Gtk::Window {
 		Gtk::Box m_box1;
 		Gtk::Box buttons1;
 		Gtk::Box buttons2;
+		Gtk::Box bottom_box;
 		Gtk::Box buttons3;
 		Gtk::Box button_frame;
 		Gtk::Box button_frame2;
+		Gtk::CheckButton startup;
+		Gtk::Label lainos_label;
 		Gtk::Grid org;
+		Gtk::Grid bottom_btns;
 		Gtk::Button m_button1, m_button2, m_button3, m_button4,
 			m_button5, m_button6, m_button7, m_button8, m_button9, m_button10;
 		Gtk::Button reddit, youtube, blog;

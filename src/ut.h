@@ -6,6 +6,8 @@
 #define HOV ":hover "
 #define AC ":active "
 
+typedef Gtk::Box ImageButton;
+
 class Tools {
 public: 
     // if you have deleted function you can use a refrence of that function :)
@@ -73,25 +75,19 @@ public:
     std::string cmd = "firefox " + link + " &";
     system(cmd.c_str());
   }
-  static Gtk::Box *CreateImageButton(std::string image_path, std::string _label, std::string style) {
-    auto pmap = Gtk::make_managed<Gtk::Image>(image_path);
-    // auto label = Gtk::make_managed<Gtk::Label>(_label);
-    // label->set_expand(true);
-
-    //Put them in a Box:
+  static Gtk::Box *CreateImageButton(std::string image_path, std::string style) {
+    RenImage *ImageSample = new RenImage(image_path, 30, 30);
     auto hboxr = Gtk::make_managed<Gtk::Box>(Gtk::Orientation::HORIZONTAL, 5);
     hboxr->set_valign(Gtk::Align::CENTER);
     hboxr->set_halign(Gtk::Align::CENTER);
-    hboxr->append(*pmap);
-    // hboxr->append(*label);
-
+    hboxr->append(*ImageSample);
     return hboxr;
   }
   // static void OpenAboutWindow(Gtk::Window *sample) {
   //   Gtk::Window *about_window = new ()*sample();
   //   about_window->show();
   // }
-private:
+protected:
   struct CSS {
     Glib::ustring data;
   };

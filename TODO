@@ -1,0 +1,4 @@
+TODO:
+- Load resouces from binary
+- use template instead of making multiple functions for `setStyle`
+- Remove CSS struct for cleaning code

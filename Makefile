@@ -25,7 +25,7 @@ clean:
 	rm -f LOG
 
 install: 
-	install -m 777 $(BIN_DIR)/$(OUTPUT) $(DESTDIR)$(PREFIX)/bin/
+	install -m 777 $(OUTPUT) $(DESTDIR)$(PREFIX)/bin/
 	install -m 777 media/a.svg $(DESTDIR)/usr/share/icons/
 	install -m 777 media/b.png $(DESTDIR)/usr/share/icons/
 	install -m 777 media/c.png $(DESTDIR)/usr/share/icons/

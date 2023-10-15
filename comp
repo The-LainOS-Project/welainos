@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+# TODO
+# - downlaod resources from internet
+# - install depends packages
+# - install special version of program [debug, release]
+# - manage Make switch arguments
+
+make clean
+make
+sudo make install
